@@ -6,8 +6,11 @@ import stat
 import shutil
 import sys
 
+### Set the size of histogram bins
 binSize = 50
 
+################################################################################
+### This function is used to set a proper histo name according bin range
 ################################################################################
 def findString( name ):
 
@@ -26,6 +29,8 @@ def findString( name ):
     return name[len(name) - (countDigit) : len(name)]
 
 
+################################################################################
+### This function creates tuples of histograms according bin range
 ################################################################################
 def separateHistoBin( histo ):
 
@@ -54,10 +59,13 @@ def separateHistoBin( histo ):
     return newH
 
 ################################################################################
+### Main function
+################################################################################
 def main():
 
-#    inDir = "../inputROOTfiles_Marc_Delphes_8TeV_MET200_09Jun2016"
+    ### Choose director with input histograms (data, background, signal)
     inDir = "originalFiles_28Jun2016/"
+    ### Choose one of the signals
     inFileName = [
         ("EXO-12-048_data5.root"),
         ("alternate_background5.root"),
@@ -71,25 +79,27 @@ def main():
 #        ("Marc_Delphes_jetPtScale_Mh162_histos_8TeV_MET200.root"),
         ]
 
+    ### !!! DO NOT touch in the lines bellow !!!
     nFiles = len(inFileName)
     newHistos = []
     count = 0
     histo = []
 
+    ### Loop over the list of input files (data, background, signal) and get its histograms
     for i in range(0, nFiles):
         inFile = TFile.Open( inDir + "/" + inFileName[i], "read" )
         nHistos = inFile.GetNkeys()
         listHistos = inFile.GetListOfKeys()
-#        print inFileName[i] + " ---> " + str(nHistos) + " histos"
 
+        ### Loop over list of input histograms to create a tuple of one bin histograms.
+        ### The number of one bin histograms depends on the bin size.
         for j in range(0, nHistos):
             histo.append( inFile.Get(listHistos.At(j).GetName()) )
             newHistos.append( separateHistoBin( histo[count] ) )
-#            print "\t", histo[j].GetName(), " ---> ", str(newHistos[count]), len(newHistos[count])
             count += 1
-#        print "\n"
 
-
+    ### Loop over the list of histogram tuples.
+    ### Output files will be created containng the correspondent one bin histograms.
     for i in range(0, len(newHistos[0])):
 
         print "-----------------------------------------------------------------------------------"
@@ -113,7 +123,6 @@ def main():
                 minBin = histo[j].FindBin( float(rangeMET[1 : rangeMET.find(".0")]) )
                 maxBin = histo[j].FindBin( float(rangeMET[rangeMET.find(".0")+3 :]) - 1 )
                 print histoName + " ---> Integral: " + str(histoBin.Integral()) + " / " + str(histo[j].Integral(minBin, maxBin))
-#                print rangeMET + " ==== " + str( float(rangeMET[1 : rangeMET.find(".0")]) ) + " === " + str(j)
                 histoBin.Write()
                 countRepeated += 1
 
@@ -136,7 +145,6 @@ def main():
                 minBin = histo[j].FindBin( float(rangeMET[1 : rangeMET.find(".0")]) )
                 maxBin = histo[j].FindBin( float(rangeMET[rangeMET.find(".0")+3 :]) - 1 )
                 print histoName + " ---> Integral: " + str(histoBin.Integral()) + " / " + str(histo[j].Integral(minBin, maxBin))
-#                print rangeMET + " ==== " + str( float(rangeMET[1 : rangeMET.find(".0")]) ) + " === " + str(j)
                 histoBin.Write()
 
                 print ">> Closing: " + outFileName

@@ -6,11 +6,13 @@ import stat
 import shutil
 import sys
 
-genEvents = 100000
-binSize   = 50
+genEvents = 100000 ### Number of generated events (in LHE level)
+binSize   = 50 ### Size of histogram bins
 
+### Choose directory containing signal input files
 inputDir  = "separateBins_Delphes_8TeV_MET250_28Jun2016/originalFiles_28Jun2016/"
 
+### Set names of input signal files
 inFileNames = [
     "Marc_Delphes_jetPtScale_Mh140_histos_8TeV_MET200.root",
     "Marc_Delphes_jetPtScale_Mh145_histos_8TeV_MET200.root",
@@ -23,9 +25,7 @@ inFileNames = [
     ]
 
 #############################################################################
-def getRange(histo):
-    return histo.GetBinLowEdge(1), histo.GetBinLowEdge(2)
-
+### This function compute signal efficiencies in each range
 #############################################################################
 def getEfficiencies(histo):
 
@@ -34,6 +34,8 @@ def getEfficiencies(histo):
     eff   = []
     iBin  = 0
 
+    ### Loop over the number of bins and compute efficiencies from lower bin
+    ### cut to the end of the MET distribution
     for i in range(1, nBins):
         minX = histo.GetBinLowEdge(i)
 
@@ -50,11 +52,15 @@ def getEfficiencies(histo):
     return eff
 
 #############################################################################
+### Main function
+#############################################################################
 def main():
 
     histo   = []
     listEff = []
 
+    ### Loop over number of input files and print out efficiencies in each
+    ### bin range after lower cut in the MET distribution
     for i in range(0, len(inFileNames)):
         inFile = TFile.Open( inputDir + inFileNames[i], "read")
         listOfKeys = inFile.GetListOfKeys()

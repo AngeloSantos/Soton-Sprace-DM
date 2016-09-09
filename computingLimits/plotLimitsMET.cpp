@@ -2,8 +2,10 @@
 
 void plotLimitsMET () {
 
+  // Number of bins
   int nBM = 15;//8;//23;//7;
 
+  // These values come from limitsForPlotting.py
   double x[] = { 275 , 325 , 375 , 425 , 475 , 525 , 575 , 625 , 675 , 725 , 775 , 825 , 875 , 925 , 975 };
   double xErr[] = { 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 , 25 };
   double yErr[] = { 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 };

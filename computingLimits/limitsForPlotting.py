@@ -16,8 +16,9 @@ xSec = [
     ]
 """
 
-massPoint = 5
+massPoint = 5 ### Number of mass points
 
+### Choose cross sections accordingly
 xSec = [
     0.073899,
 #    0.072681,
@@ -46,6 +47,7 @@ xSec = [
 
 CrossSection = xSec[massPoint]
 
+### These efficiencies come from  signalEfficiencies/getSignalEfficiencies.py
 effSig = [
     (0.06635, 0.03482, 0.01933, 0.01137, 0.00696, 0.00424, 0.00263, 0.00159, 0.00103, 0.00057, 0.00044, 0.00025, 0.00018, 0.00014, 6e-05),
     (0.06638, 0.03349, 0.01829, 0.0104, 0.0062, 0.00379, 0.00245, 0.00145, 0.00094, 0.00058, 0.00041, 0.00025, 0.00016, 0.00011, 3e-05),
@@ -57,6 +59,9 @@ effSig = [
     (0.06688, 0.03454, 0.01964, 0.01153, 0.0069, 0.00415, 0.00261, 0.00177, 0.00109, 0.00078, 0.0006, 0.00042, 0.00023, 0.00016, 6e-05),
     ]
 
+### Expected limits
+### These cross sections come from computingLimitsWithTheta.py
+### (Mass, Exp,    -2 sd,  +2 sd,  -1 sd,  +1 sd)
 exp = [
     (250,  45.08, 24.276, 84.243, 32.388,  62.99),
     (300, 56.001, 30.097, 104.95, 40.187, 78.363),
@@ -75,6 +80,9 @@ exp = [
     (950, 183.06,  85.95, 425.71, 121.2, 284.31),
     ]
 
+### Observed limits
+### These cross sections come from computingLimitsWithTheta.py
+### (Mass, Obs)
 obs = [
     (250, 53.809),
     (300, 89.693),

@@ -6,10 +6,11 @@ import stat
 import shutil
 import sys
 
-minMET  = 250
-maxMET  = 1000
-stepMET = 50
+minMET  = 250  ### Lower x in MET distribution
+maxMET  = 1000 ### High x in MET distribution
+stepMET = 50   ### Size of histogram bin
 
+### Choose (h1 mass, cross section)
 xSec = [
 #    (40, 0.073899),
 #    (41, 0.072681),
@@ -38,6 +39,7 @@ xSec = [
 
 
 #######################################################################################
+### This function creates a script to be run into Theta code and compute limits
 #######################################################################################
 def createScript( mass, xs, MET ):
 
@@ -78,6 +80,7 @@ def bash_via_python(command_line):
 
 
 #######################################################################################
+### Main function: it calls the theta script and compute limits
 #######################################################################################
 def main ():
 
@@ -91,6 +94,7 @@ def main ():
             createScript(xSec[j][0], xSec[j][1], MET)
             bash_via_python( "python  ../../../theta-auto.py  analysis.py" )
 
+    ### Type the commands bellow to 
     print "\n\t For odd  line,  use: -------->>> grep \"140\" LogFile.log | sed -n 1~2p"
     print "\n\t For even lines, use: -------->>> grep \"140\" LogFile.log | sed -n 2~2p"
 
