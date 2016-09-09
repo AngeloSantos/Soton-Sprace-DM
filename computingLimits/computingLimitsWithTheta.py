@@ -6,6 +6,8 @@ import stat
 import shutil
 import sys
 
+### Input files (data, backg and signal) must be in the same directory as this script
+
 minMET  = 250  ### Lower x in MET distribution
 maxMET  = 1000 ### High x in MET distribution
 stepMET = 50   ### Size of histogram bin

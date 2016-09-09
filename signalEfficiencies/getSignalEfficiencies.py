@@ -10,7 +10,7 @@ genEvents = 100000 ### Number of generated events (in LHE level)
 binSize   = 50 ### Size of histogram bins
 
 ### Choose directory containing signal input files
-inputDir  = "separateBins_Delphes_8TeV_MET250_28Jun2016/originalFiles_28Jun2016/"
+inputDir  = "../exampleOfInputFiles_8TeV/"
 
 ### Set names of input signal files
 inFileNames = [

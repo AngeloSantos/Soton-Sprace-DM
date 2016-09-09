@@ -48,6 +48,8 @@ xSec = [
 CrossSection = xSec[massPoint]
 
 ### These efficiencies come from  signalEfficiencies/getSignalEfficiencies.py
+### The most up (down) line correspond to the first (last) cross section above
+### The most left (right) value corresponds to the lowest (highest) bin in MET distribution
 effSig = [
     (0.06635, 0.03482, 0.01933, 0.01137, 0.00696, 0.00424, 0.00263, 0.00159, 0.00103, 0.00057, 0.00044, 0.00025, 0.00018, 0.00014, 6e-05),
     (0.06638, 0.03349, 0.01829, 0.0104, 0.0062, 0.00379, 0.00245, 0.00145, 0.00094, 0.00058, 0.00041, 0.00025, 0.00016, 0.00011, 3e-05),

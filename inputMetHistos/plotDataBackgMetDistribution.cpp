@@ -1,7 +1,7 @@
 void compareNewMet () {
 
-  TFile *fData = TFile::Open("EXO-12-048_data5.root",      "read");
-  TFile *fBack = TFile::Open("alternate_background5.root", "read");
+  TFile *fData = TFile::Open("../exampleOfInputFiles_8TeV/EXO-12-048_data5.root",      "read");
+  TFile *fBack = TFile::Open("../exampleOfInputFiles_8TeV/alternate_background5.root", "read");
 
   TH1F *hBack  = fBack->Get("CMS_EXO_12_048__background");
   TH1F *hBackP = fBack->Get("CMS_EXO_12_048__background__uncer__plus");

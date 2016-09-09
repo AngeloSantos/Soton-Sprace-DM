@@ -68,7 +68,7 @@ def separateHistoBin( histo ):
 def main():
 
     ### Choose directory with input files (data, background, signal)
-    inDir = "originalFiles_28Jun2016/"
+    inDir = "../exampleOfInputFiles_8TeV/"
     
     ### Choose input files
     inFileName = [
