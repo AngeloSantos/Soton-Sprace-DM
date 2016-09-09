@@ -1,4 +1,4 @@
-void compareNewMet () {
+void plotDataBackgMetDistribution () {
 
   TFile *fData = TFile::Open("../exampleOfInputFiles_8TeV/EXO-12-048_data5.root",      "read");
   TFile *fBack = TFile::Open("../exampleOfInputFiles_8TeV/alternate_background5.root", "read");
