@@ -1,9 +1,23 @@
 # Soton-Sprace-DM
 Phenomenological studies between Southampton and SPRACE in i2HDM
 
-## Contents of this 
+## Contents
 
-## Installing theta code using CMSSW following instructions from [Theta web page](http://www-ekp.physik.uni-karlsruhe.de/~ott/theta/theta-auto/installation.html)
+1. `inputMetHistos/` (contains macro files to prepare the input histograms)
+  1. plotDataBackgMetDistribution.cpp (print data and background MET distributions)
+  2. prepareHistosOneBinAnalys.py (prepare histograms for one bin analisys)
+  3. prepareHistosShapeBinAnalys.py (prepare histograms for shape analisys)
+2. `signalEfficiencies/` (contains macro file to compute signal effiencies)
+  * getSignalEfficiencies.py (compute signal efficiencies)
+3. `computingLimits/` (contains macro files to compute limits and plot them)
+  1. computingLimitsWithTheta.py (compute limits using Theta code)
+  2. limitsForPlotting.py (prepare limits to be plotted)
+  3. computingLimitsWithTheta.py (plot limits)
+
+
+## Installing theta code using CMSSW
+
+Following instructions from [Theta web page](http://www-ekp.physik.uni-karlsruhe.de/~ott/theta/theta-auto/installation.html)
 
 * Preparing CMSSW workarea
 
