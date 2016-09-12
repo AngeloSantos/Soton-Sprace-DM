@@ -11,8 +11,9 @@ Phenomenological studies between Southampton and SPRACE in i2HDM
   * getSignalEfficiencies.py (compute signal efficiencies)
 3. `computingLimits/` (contains macro files to compute limits and plot them)
   1. computingLimitsWithTheta.py (compute limits using Theta code)
-  2. limitsForPlotting.py (prepare limits to be plotted)
-  3. computingLimitsWithTheta.py (plot limits)
+  2. analysis.py (simple script to compute limits using Theta)
+  3. limitsForPlotting.py (prepare limits to be plotted)
+  4. computingLimitsWithTheta.py (plot limits)
 
 
 ## Installing theta code using CMSSW
@@ -38,3 +39,18 @@ cd theta/
 make
 ```
 
+## Computing limits with Theta
+
+Prepare a working area inside `theta/` directory:
+
+```
+cd utils2/examples/counting/
+mkdir TestingTheta
+cd TestingTheta/
+```
+
+Copy `computingLimits/analysis.py` to `TestingTheta/` and run
+
+```
+python ../../../theta-auto.py  analysis.py
+```

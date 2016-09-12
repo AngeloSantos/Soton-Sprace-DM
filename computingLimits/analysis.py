@@ -1,8 +1,8 @@
 ### To run this script use:    python ../../../theta-auto.py  analysis.py
 
-model = build_model_from_rootfile(['../exampleOfInputFiles_8TeV/EXO-16-013_data_2p3.root',
-                                   '../exampleOfInputFiles_8TeV/EXO-16-013_background_2p3.root',
-                                   '../exampleOfInputFiles_8TeV/Marc_Delphes_jetPtScale_Mh160_histos_13TeV_MET200.root'])
+model = build_model_from_rootfile(['EXO-16-013_data_2p3.root',
+                                   'EXO-16-013_background_2p3.root',
+                                   'Marc_Delphes_jetPtScale_Mh160_histos_13TeV_MET200.root'])
 
 # signal cross section (fb)
 #xSec = 0.24281 # Mh1 = 40 GeV
