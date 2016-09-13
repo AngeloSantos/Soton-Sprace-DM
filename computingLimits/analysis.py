@@ -19,7 +19,7 @@ genEvents = 100000 # number of generated events
 
 #print model
 model.set_signal_processes('Mh1*')
-model.scale_predictions(xSec*Lumi*genEvents,procname="Mh160",obsname="CMS_EXO_16_013")
+model.scale_predictions(xSec*Lumi/genEvents,procname="Mh160",obsname="CMS_EXO_16_013")
 
 expected, observed = asymptotic_cls_limits(model)
 print expected, observed
