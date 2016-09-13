@@ -4,7 +4,7 @@ model = build_model_from_rootfile(['EXO-16-013_data_2p3.root',
                                    'EXO-16-013_background_2p3.root',
                                    'Marc_Delphes_jetPtScale_Mh160_histos_13TeV_MET200.root'])
 
-# signal cross section (fb)
+# signal cross section (pb)
 #xSec = 0.24281 # Mh1 = 40 GeV
 #xSec = 0.22092 # Mh1 = 45 GeV
 #xSec = 0.19255 # Mh1 = 50 GeV
@@ -14,7 +14,7 @@ xSec = 0.093206 # Mh1 = 60 GeV
 #xSec = 0.072845 # Mh1 = 61 GeV
 #xSec = 0.042620 # Mh1 = 62 GeV
 
-Lumi      = 2.3    # luminosity (1/fb)
+Lumi      = 2300   # luminosity (1/pb)
 genEvents = 100000 # number of generated events
 
 #print model
